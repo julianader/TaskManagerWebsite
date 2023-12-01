@@ -42,3 +42,13 @@ document.getElementById("startButton").addEventListener("click", function () {
       }
     }, 1000);
   }
+
+  function resetCountdown() {
+    clearInterval(intervalId); // Stop the ongoing countdown
+  
+    // Reset the timer to 00:00:00
+    document.getElementById("countdown").innerHTML = "00:00:00";
+  
+    const countdownInput = document.getElementById("countdownTime");
+    countdownInput.disabled = false; // Enable the input field when resetting the countdown
+  }
