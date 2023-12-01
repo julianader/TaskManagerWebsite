@@ -156,3 +156,53 @@ header .play-button{
     font-size: 20px;
   }
 }
+
+@media (max-width:410px) {
+  header{
+    height: 100vh;
+    width: 100%;
+    border-radius: 0px;
+  }
+  header .navbar{
+    padding: 15px 10px;
+}
+}
+.container {
+  width: 70%; /* Adjust the width as needed */
+  max-width: 1200px; /* Maximum width for the box */
+  height:420px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  /* Set the background color to transparent white */
+  background-color: rgba(255, 255, 255, 0.4); /* Adjust the alpha (0.8) for transparency */
+}
+
+#todoForm {
+  text-align: center; /* Aligns the content center horizontally */
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+#datetimeForm button {
+  display: block;
+  margin: 20px auto 0; /* Adds space from the top */
+  border-radius: 20px; /* Adjust border-radius to create an oval shape */
+  padding: 10px 20px; 
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  background-color: #F4E5C0;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
