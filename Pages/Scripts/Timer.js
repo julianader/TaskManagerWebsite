@@ -5,3 +5,6 @@ document.getElementById("startButton").addEventListener("click", function () {
     startCountdown();
   });
   
+  document.getElementById("resetButton").addEventListener("click", function () {
+    resetCountdown();
+  });
