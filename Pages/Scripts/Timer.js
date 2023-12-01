@@ -1,0 +1,2 @@
+let intervalId; // Declare intervalId as a global variable
+let countDownDate; // Declare countDownDate as a global variable
