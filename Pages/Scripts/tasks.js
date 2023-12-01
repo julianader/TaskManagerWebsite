@@ -42,3 +42,9 @@ function addTaskWithDateTime() {
         alert("Please enter a task!");
     }
 }
+document.getElementById("taskInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default behavior of the "Enter" key in the input
+        addTaskWithDateTime();
+    }
+});
