@@ -263,3 +263,39 @@ button {
   font-size: 14px;
   margin-bottom: 8px;
 }
+.btn{
+  border-radius: 40px;
+  color:#d6d1cb;
+  padding:10px;
+  margin-top:15px;
+background-color:#534a43;
+font-size: 18px;
+border:none;
+cursor:pointer;
+margin: center;
+
+}
+.card img {
+  max-width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+#countdownTime {
+  font-size: 16px;
+  padding: 5px;
+}
+
+#countdown {
+  font-size: 36px;
+  font-weight: bold;
+  color: #6C543B;
+  margin-top: 20px;
+}
+#right-container {
+  flex: 1;
+  float:right;
+  padding: 20px;
+  margin: 50px;
+width: 50%;
+border: 3px ;
+}
