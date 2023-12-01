@@ -225,3 +225,41 @@ button {
   border-radius: 4px;
   font-size: 16px;
 } 
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #6C543B;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; /* Adjust space from the bottom */
+}
+    
+.card {
+  width: 250px;
+  height: 350px; /* Increased height to fit larger text */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #6C543B; /* Set the color of all text inside the cards */
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
