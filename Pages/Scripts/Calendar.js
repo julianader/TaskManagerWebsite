@@ -91,3 +91,5 @@ const addTask = (day, task) => {
     taskText.classList.toggle("strikethrough", checkbox.checked);
   });
 };
+// Commit 8: Initial Calendar Rendering
+renderCalendar();
