@@ -22,3 +22,10 @@ const months = [
   "November",
   "December",
 ];
+// Commit 2: Define Calendar Rendering Function
+const renderCalendar = () => {
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
+      lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+      lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(),
+      lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+    let liTag = "";
