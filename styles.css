@@ -206,3 +206,22 @@ header .play-button{
   border-radius: 15px;
   font-size: 14px;
 }
+
+form {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+button {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+} 
