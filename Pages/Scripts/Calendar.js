@@ -53,3 +53,16 @@ const renderCalendar = () => {
   }
   currentDate.innerText = `${months[currMonth]} ${currYear}`;
   daysTag.innerHTML = liTag;
+  
+  // Commit 4: Add Event Listeners for Task Buttons
+  const addTaskButtons = document.querySelectorAll(".add-task");
+  addTaskButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const day = event.target.parentElement.dataset.day;
+      const task = prompt(`Enter a task for Day ${day}:`);
+      if (task) {
+        addTask(day, task);
+      }
+    });
+  });
+};
