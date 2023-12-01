@@ -73,3 +73,16 @@ const addTask = (day, task) => {
                         <span class="task-text">Day ${day}: ${task}</span>
                         <button class="edit-task">Edit</button>`;
   taskList.appendChild(listItem); 
+
+  // Commit 6: Add Event Listener for the Edit Button
+  const editButton = listItem.querySelector(".edit-task");
+  const taskText = listItem.querySelector(".task-text");
+  const checkbox = listItem.querySelector(".task-checkbox");
+
+  editButton.addEventListener("click", () => {
+    const updatedTask = prompt("Enter the updated task:", taskText.innerText.split(":")[1].trim());
+    if (updatedTask !== null) {
+      taskText.innerText = `Day ${day}: ${updatedTask}`;
+    }
+  });
+  
