@@ -53,7 +53,7 @@ const renderCalendar = () => {
   }
   currentDate.innerText = `${months[currMonth]} ${currYear}`;
   daysTag.innerHTML = liTag;
-  
+
   // Commit 4: Add Event Listeners for Task Buttons
   const addTaskButtons = document.querySelectorAll(".add-task");
   addTaskButtons.forEach((button) => {
@@ -66,3 +66,10 @@ const renderCalendar = () => {
     });
   });
 };
+// Commit 5: Define Function to Add Task
+const addTask = (day, task) => {
+  const listItem = document.createElement("li");
+  listItem.innerHTML = `<input type="checkbox" class="task-checkbox">
+                        <span class="task-text">Day ${day}: ${task}</span>
+                        <button class="edit-task">Edit</button>`;
+  taskList.appendChild(listItem); 
