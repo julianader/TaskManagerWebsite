@@ -85,4 +85,9 @@ const addTask = (day, task) => {
       taskText.innerText = `Day ${day}: ${updatedTask}`;
     }
   });
-  
+
+   // Commit 7: Add Event Listener for Checkbox
+   checkbox.addEventListener("change", () => {
+    taskText.classList.toggle("strikethrough", checkbox.checked);
+  });
+};
