@@ -30,3 +30,6 @@ app.post('/register', async (req, res) => {
         res.status(500).send('Registration failed. Please try again.');
     }
 });
+app.get('/', (req, res) => {
+    res.send('Server is running.');
+});
