@@ -63,3 +63,11 @@ function goToBlogs() {
 function goToContact() {
     window.location.href = "./Pages/Contact.html";
 }
+
+function enableButtons() {
+    document.getElementById('tasksButton').classList.remove('disabled');
+    document.getElementById('timerButton').classList.remove('disabled');
+    document.getElementById('calendarButton').classList.remove('disabled');
+    document.getElementById('blogsButton').classList.remove('disabled');
+    document.getElementById('contactButton').classList.remove('disabled');
+}
