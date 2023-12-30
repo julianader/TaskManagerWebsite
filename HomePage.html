@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="./HomePage.js" defer></script>
       </head>
 <body>
     <video id="background-video" loop muted poster="moving.jpg">
@@ -17,11 +16,11 @@
         <div class="logo"><a href="./HomePage.html">TASK MANAGER></a></div>
         <ul class="menu">
           <li><a href="./HomePage.html">Home</a></li>
-          <li><a href="./Pages/Tasks.html">Tasks</a></li>
-          <li><a href="./Pages/Timer.html">Timer</a></li>
-          <li><a href="./Pages/Calendar.html">Calendar</a></li>
-          <li><a href="./Pages/Blogs.html">Blogs</a></li>
-          <li><a href="./Pages/Contact.html">ContactUS</a></li>
+            <li><a id="tasksButton" class="disabled" href="./Pages/Tasks.html">Tasks</a></li>
+            <li><a id="timerButton" class="disabled" href="./Pages/Timer.html">Timer</a></li>
+            <li><a id="calendarButton" class="disabled" href="./Pages/Calendar.html">Calendar</a></li>
+            <li><a id="blogsButton" class="disabled" href="./Pages/Blogs.html">Blogs</a></li>
+            <li><a id="contactButton" class="disabled" href="./Pages/Contact.html">ContactUS</a></li>
         </ul>
         <!-- Login Form -->
         <div id="loginPopup" class="popup">
