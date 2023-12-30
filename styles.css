@@ -118,7 +118,7 @@ header .play-button{
   font-size: 18px;
   font-weight: 500;
 }
- .play-button .play::before{
+.play-button .play::before{
    content: '';
    position: absolute;
    height: 3px;
@@ -317,4 +317,62 @@ border: 3px ;
     background: url("moving.jpg") no-repeat;
     background-size: cover;
   }
+}
+/* Add these styles to your existing styles.css file or include them in the <style> section */
+input[type="password"] {
+  -webkit-text-security: disc; /* Safari, Chrome */
+  font-family: inherit; /* Use the same font as other text inputs */
+  padding: 8px; /* Adjust padding as needed */
+  width:218px;
+  margin: 5px 0; /* Adjust margin as needed */
+}
+input[type="email"] {
+  font-family: inherit; /* Use the same font as other text inputs */
+  padding: 8px; /* Adjust padding as needed */
+  width:218px;
+  margin: 5px 0; /* Adjust margin as needed */
+}
+input[type="Number"] {
+  font-family: inherit; /* Use the same font as other text inputs */
+  padding: 8px; /* Adjust padding as needed */
+  width:218px;
+  margin: 5px 0; /* Adjust margin as needed */
+}
+
+/* Add these styles to your existing styles.css file */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 12;
+  border-radius: 25px;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 30px; /* Adjust the font size to make it bigger */
+  color: #000; /* Adjust the color if needed */
+  padding: 10px; /* Adjust the padding around the "x" icon */
+}
+
+/* Add a style for disabled buttons */
+.disabled {
+  pointer-events: none; /* Disable click events */
+  opacity: 0.5; /* Apply visual indication of disabled state */
 }
