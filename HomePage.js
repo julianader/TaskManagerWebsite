@@ -53,6 +53,42 @@ function performRegistration() {
         });
     }
 }
+
+function performLogin() {
+    var email = document.querySelector("#loginPopup input[type='text']").value;
+    var password = document.querySelector("#loginPopup input[type='password']").value;
+
+    if (email === '' || password === '') {
+        alert('Please fill in all the fields');
+    } else {
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            }),
+        }).then(async response => {
+            const responseText = await response.text();
+            console.log('Server response:', responseText); // Log the response for debugging
+
+            if (responseText === 'Login successful') {
+                alert('Login Successful!');
+                enableButtons();
+                // Clear input fields
+                document.querySelector("#loginPopup input[type='email']").value = '';
+                document.querySelector("#loginPopup input[type='password']").value = '';
+                closePopup('loginPopup');
+            } else {
+                alert('Invalid Credentials. Please Register First!');
+            }
+        })
+    }
+    
+}
+
 function goToTasks() {
     window.location.href = "./Pages/Tasks.html";
 }
