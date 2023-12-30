@@ -71,3 +71,10 @@ function enableButtons() {
     document.getElementById('blogsButton').classList.remove('disabled');
     document.getElementById('contactButton').classList.remove('disabled');
 }
+function disableButtons() {
+    document.getElementById('tasksButton').classList.add('disabled');
+    document.getElementById('timerButton').classList.add('disabled');
+    document.getElementById('calendarButton').classList.add('disabled');
+    document.getElementById('blogsButton').classList.add('disabled');
+    document.getElementById('contactButton').classList.add('disabled');
+}
