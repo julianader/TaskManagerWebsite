@@ -6,33 +6,41 @@ function closePopup(popupId) {
     document.getElementById(popupId).style.display = 'none';
 }
 
-function performLogin() {
-    // Get user input
-    var email = document.getElementById('loginEmail').value;
-    var password = document.getElementById('loginPassword').value;
-
-    // Validate login (you can replace this with actual validation logic)
-    if (email && password) {
-        alert('Login successful!'); // Replace this with your actual login logic
-        closePopup('loginPopup');
-    } else {
-        alert('Invalid email or password. Please try again.');
-    }
-}
+let registrationCounter = 1;
 
 function performRegistration() {
-    // Get user input
-    var firstName = document.getElementById('firstName').value;
-    var lastName = document.getElementById('lastName').value;
-    var email = document.getElementById('registerEmail').value;
-    var phoneNumber = document.getElementById('phoneNumber').value;
-    var password = document.getElementById('registerPassword').value;
+    var firstName = document.querySelector("#registerPopup input[placeholder='First Name']").value;
+    var lastName = document.querySelector("#registerPopup input[placeholder='Last Name']").value;
+    var phoneNumber = document.querySelector("#registerPopup input[placeholder='Phone Number']").value;
+    var email = document.querySelector("#registerPopup input[type='email']").value;
+    var password = document.querySelector("#registerPopup input[type='password']").value;
 
-    // Validate registration (you can replace this with actual validation logic)
-    if (firstName && lastName && email && phoneNumber && password) {
-        alert('Registration successful!'); // Replace this with your actual registration logic
-        closePopup('registerPopup');
+    if (firstName === '' || lastName === '' || phoneNumber === '' || email === '' || password === '') {
+        alert('Please fill in all the fields');
     } else {
-        alert('Please fill in all fields.');
+        // Send registration data to the server
+        fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstName: firstName,
+                lastName: lastName,
+                phoneNumber: phoneNumber,
+                email: email,
+                password: password,
+                registrationCounter: registrationCounter,
+            }),
+        })
+        .then(response => response.text())
+        .then(message => {
+            alert(message);
+            closePopup('registerPopup');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Registration failed. Please try again.');
+        });
     }
 }
