@@ -10,6 +10,38 @@ app.use(cors());
 
 let registrationCounter = 1;
 
+async function saveToExcel(data) {
+    const filePath = 'WebsiteData.xlsx';
+    const workbook = new ExcelJS.Workbook();
+    let sheet;
+
+    try {
+        // Read the existing workbook or create a new one if not exists
+        await workbook.xlsx.readFile(filePath);
+        sheet = workbook.getWorksheet('User Data');
+
+        // Find the next empty row in the sheet
+        const nextRow = sheet.lastRow ? sheet.lastRow.number + 1 : 2;
+
+        // Add data to the next empty row
+        const newRow = sheet.getRow(nextRow);
+        newRow.getCell(1).value = data.registrationCounter;
+        newRow.getCell(2).value = data.firstName;
+        newRow.getCell(3).value = data.lastName;
+        newRow.getCell(4).value = data.phoneNumber;
+        newRow.getCell(5).value = data.email;
+        newRow.getCell(6).value = data.password;
+
+        // Write the updated workbook to the file
+        await workbook.xlsx.writeFile(filePath);
+
+        console.log('Data added to Excel file:', data);
+    } catch (error) {
+        console.error('Error in saveToExcel:', error);
+        throw error;
+    }
+}
+
 app.post('/register', async (req, res) => {
     const { firstName, lastName, phoneNumber, email, password } = req.body;
     
