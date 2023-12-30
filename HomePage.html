@@ -12,9 +12,9 @@
         <source src="moving.mp4" type="video/mp4">
       </video>
     <header>
-    <nav class="navbar">
-      <div class="logo"><a href="./HomePage.html">TASK MANAGER></a></div>
-      <ul class="menu">
+      <nav class="navbar">
+        <div class="logo"><a href="./HomePage.html">TASK MANAGER></a></div>
+        <ul class="menu">
           <li><a href="./HomePage.html">Home</a></li>
           <li><a href="./Pages/Tasks.html">Tasks</a></li>
           <li><a href="./Pages/Timer.html">Timer</a></li>
@@ -34,27 +34,29 @@
               <button type="button" onclick="performLogin()">Login</button>
             </form>
           </div>
-          </div>
-          <!-- Register Form -->
-          <div id="registerPopup" class="popup">
-            <div class="popup-content">
-              <span class="close" onclick="closePopup('registerPopup')">&times;</span>
-              <h2>Register</h2>
-              <form>
-                <!-- Add your register form fields here -->
-                <input type="text" placeholder="First Name" required><br>
-                <input type="text" placeholder="Last Name" required><br>
-                <input type="number" placeholder="Phone Number" required><br>
-                <input type="email" placeholder="Email" required><br>
-                <input type="password" placeholder="Password" required><br>
-                <button type="button" onclick="performRegistration()">Register</button>
-              </form>
-            </div>
-          </div>
-          <div class="buttons">
-            <input type="button" value="Login" onclick="openPopup('loginPopup')">
-            <input type="button" value="Register" onclick="openPopup('registerPopup')">
-          </div>
+        </div>
+        
+        <!-- Register Form -->
+        <div id="registerPopup" class="popup">
+          <div class="popup-content">
+            <span class="close" onclick="closePopup('registerPopup')">&times;</span>
+            <h2>Register</h2>
+            <form>
+              <!-- Add your register form fields here -->
+              <input type="text" placeholder="First Name" required><br>
+              <input type="text" placeholder="Last Name" required><br>
+              <input type="number" placeholder="Phone Number" required><br>
+              <input type="email" placeholder="Email" required><br>
+              <input type="password" placeholder="Password" required><br>
+              <button type="button" onclick="performRegistration()">Register</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <input type="button" value="Login" onclick="openPopup('loginPopup')">
+          <input type="button" value="Register" onclick="openPopup('registerPopup')">
+        </div>
       </nav>
       <div class="text-content">
         <h1>Learn To Enjoy,<br>Every Moment Of Your Life</h1>
@@ -66,6 +68,5 @@
         <i class="fas fa-play"></i>
       </div>
     </header>
-  
 </body>
 </html>
