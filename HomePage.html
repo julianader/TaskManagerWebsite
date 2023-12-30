@@ -35,6 +35,22 @@
             </form>
           </div>
           </div>
+          <!-- Register Form -->
+          <div id="registerPopup" class="popup">
+            <div class="popup-content">
+              <span class="close" onclick="closePopup('registerPopup')">&times;</span>
+              <h2>Register</h2>
+              <form>
+                <!-- Add your register form fields here -->
+                <input type="text" placeholder="First Name" required><br>
+                <input type="text" placeholder="Last Name" required><br>
+                <input type="number" placeholder="Phone Number" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <button type="button" onclick="performRegistration()">Register</button>
+              </form>
+            </div>
+          </div>
         <div class="buttons">
           <input type="button" value="Login">
           <input type="button" value="Register">
