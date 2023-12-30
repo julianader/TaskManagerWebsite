@@ -22,6 +22,19 @@
           <li><a href="./Pages/Blogs.html">Blogs</a></li>
           <li><a href="./Pages/Contact.html">ContactUS</a></li>
         </ul>
+        <!-- Login Form -->
+        <div id="loginPopup" class="popup">
+          <div class="popup-content">
+            <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+            <h2>Login</h2>
+            <form>
+              <!-- Add your login form fields here -->
+              <input type="text" placeholder="Username" required><br>
+              <input type="password" placeholder="Password" required><br>
+              <button type="button" onclick="performLogin()">Login</button>
+            </form>
+          </div>
+          </div>
         <div class="buttons">
           <input type="button" value="Login">
           <input type="button" value="Register">
