@@ -44,3 +44,22 @@ function performRegistration() {
         });
     }
 }
+function goToTasks() {
+    window.location.href = "./Pages/Tasks.html";
+}
+
+function goToTimer() {
+    window.location.href = "./Pages/Timer.html";
+}
+
+function goToCalendar() {
+    window.location.href = "./Pages/Calendar.html";
+}
+
+function goToBlogs() {
+    window.location.href = "./Pages/Blogs.html";
+}
+
+function goToContact() {
+    window.location.href = "./Pages/Contact.html";
+}
