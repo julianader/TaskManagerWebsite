@@ -71,10 +71,26 @@ function enableButtons() {
     document.getElementById('blogsButton').classList.remove('disabled');
     document.getElementById('contactButton').classList.remove('disabled');
 }
+
 function disableButtons() {
     document.getElementById('tasksButton').classList.add('disabled');
     document.getElementById('timerButton').classList.add('disabled');
     document.getElementById('calendarButton').classList.add('disabled');
     document.getElementById('blogsButton').classList.add('disabled');
     document.getElementById('contactButton').classList.add('disabled');
+}
+
+
+function playVideo() {
+    var video = document.getElementById("background-video");
+
+    // Toggle the visibility of the video
+    video.style.display = (video.style.display === 'none' || video.style.display === '') ? 'block' : 'none';
+
+    // Check if the video is paused or ended
+    if (video.style.display === 'block') {
+      video.play();
+    } else {
+      video.pause();
+    }
 }
