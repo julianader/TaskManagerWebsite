@@ -1,9 +1,18 @@
 function openPopup(popupId) {
-    document.getElementById(popupId).style.display = 'block';
+    var popup = document.getElementById(popupId);
+    popup.style.display = 'block';
 }
 
 function closePopup(popupId) {
-    document.getElementById(popupId).style.display = 'none';
+    var popup = document.getElementById(popupId);
+
+    // Clear input fields
+    var inputFields = popup.querySelectorAll('input');
+    inputFields.forEach(function(input) {
+        input.value = '';
+    });
+
+    popup.style.display = 'none';
 }
 
 let registrationCounter = 1;
