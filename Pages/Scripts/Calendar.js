@@ -31,10 +31,11 @@ const renderCalendar = () => {
     let liTag = "";
 
  // Commit 3: Generate Calendar Days
+ ////This part is used to disable the first days of the next month without entering it
  for (let i = firstDayofMonth; i > 0; i--) {
     liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
   }
-
+  //this part to add all the days of the current month
   for (let i = 1; i <= lastDateofMonth; i++) {
     let isToday =
       i === date.getDate() &&
@@ -47,20 +48,22 @@ const renderCalendar = () => {
         <button class="add-task">+</button>
         </li>`;
   }
-
+  ///This part is used to disable the last days of the previous month without entering it.
   for (let i = lastDayofMonth; i < 6; i++) {
     liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
   }
+  //To include the months and the days in the HTML file.
   currentDate.innerText = `${months[currMonth]} ${currYear}`;
   daysTag.innerHTML = liTag;
 
-  // Commit 4: Add Event Listeners for Task Buttons
+  // Commit 4: Add Event Listeners for Task Buttons To add tasks based on the day
   const addTaskButtons = document.querySelectorAll(".add-task");
   addTaskButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const day = event.target.parentElement.dataset.day;
       const task = prompt(`Enter a task for Day ${day}:`);
       if (task) {
+        //If he entered a task then add it
         addTask(day, task);
       }
     });
@@ -68,6 +71,7 @@ const renderCalendar = () => {
 };
 // Commit 5: Define Function to Add Task
 const addTask = (day, task) => {
+  ////to add an edit button and a checkbox to any task
   const listItem = document.createElement("li");
   listItem.innerHTML = `<input type="checkbox" class="task-checkbox">
                         <span class="task-text">Day ${day}: ${task}</span>
@@ -75,10 +79,12 @@ const addTask = (day, task) => {
   taskList.appendChild(listItem); 
 
   // Commit 6: Add Event Listener for the Edit Button
+  //Adding actions for the edit button
   const editButton = listItem.querySelector(".edit-task");
   const taskText = listItem.querySelector(".task-text");
   const checkbox = listItem.querySelector(".task-checkbox");
 
+  //The action of editing the task itself
   editButton.addEventListener("click", () => {
     const updatedTask = prompt("Enter the updated task:", taskText.innerText.split(":")[1].trim());
     if (updatedTask !== null) {
@@ -87,11 +93,13 @@ const addTask = (day, task) => {
   });
 
    // Commit 7: Add Event Listener for Checkbox
+   ///To change the format of the ticked task to be strikethrough
    checkbox.addEventListener("change", () => {
     taskText.classList.toggle("strikethrough", checkbox.checked);
   });
 };
 // Commit 8: Initial Calendar Rendering
+//To show the task
 renderCalendar();
 
 // Commit 9: Add Event Listeners for Prev/Next Icons
