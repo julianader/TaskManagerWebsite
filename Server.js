@@ -10,6 +10,29 @@ app.use(cors());
 
 let registrationCounter = 1;
 
+app.post('/register', async (req, res) => {
+    const {firstName, lastName, phoneNumber, email, password } = req.body;
+    
+    // Increment the registration counter for the next registration
+    registrationCounter++;
+
+    const userData = {
+        registrationCounter: registrationCounter,
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email,
+        password: password,
+    };
+    try {
+        await saveToExcel(userData);
+        res.send('Registration successful!');
+    } catch (error) {
+        console.error('Registration failed:', error);
+        res.status(500).send('Registration failed. Please try again.');
+    }
+});
+
 async function saveToExcel(data) {
     const filePath = 'WebsiteData.xlsx';
     const workbook = new ExcelJS.Workbook();
@@ -41,29 +64,6 @@ async function saveToExcel(data) {
         throw error;
     }
 }
-
-app.post('/register', async (req, res) => {
-    const { firstName, lastName, phoneNumber, email, password } = req.body;
-    
-    // Increment the registration counter for the next registration
-    registrationCounter++;
-
-    const userData = {
-        registrationCounter: registrationCounter,
-        firstName: firstName,
-        lastName: lastName,
-        phoneNumber: phoneNumber,
-        email: email,
-        password: password,
-    };
-    try {
-        await saveToExcel(userData);
-        res.send('Registration successful!');
-    } catch (error) {
-        console.error('Registration failed:', error);
-        res.status(500).send('Registration failed. Please try again.');
-    }
-});
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
@@ -101,7 +101,7 @@ app.post('/login', async (req, res) => {
       }
 });
 
-app.get('/', (req, res) => {
+app.get('/', (res) => {
     res.send('Server is running.');
 });
 
